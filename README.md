@@ -2,203 +2,168 @@
 ## Description
 A program to create contacts (like on the mobile phone) and search for people or organizations by name.   
 ## Features
-- Pattern
+- Command pattern
 - Regexps
 - Java Reflection
 - Java I/O Streams  
 ## Running the project
 The Source files for this project can be found by navigating to:  
-Simple_Banking_System/task/src/banking/Main.java
+Contacts/task/src/contacts/Main.java
 ## Usage
-**Example 1**    
+**Example 1**   
+
+The symbol ```>``` represents the user input.
 ```
-1. Create an account
-2. Log into account
-0. Exit
->1
+Enter action (add, remove, edit, count, info, exit): > add
+Enter the type (person, organization): > person
+Enter the name: > John
+Enter the surname: > Smith
+Enter the birth date: >
+Bad birth date!
+Enter the gender (M, F): >
+Bad gender!
+Enter the number: > +0 (123) 456-789-ABcd
+The record added.
 
-Your card has been created
-Your card number:
-4000009455296122
-Your card PIN:
-1961
+Enter action (add, remove, edit, count, info, exit): > add
+Enter the type (person, organization): > organization
+Enter the organization name: > Pizza Shop
+Enter the address: > Wall St. 1
+Enter the number: > +0 (123) 456-789-9999
+The record added.
 
-1. Create an account
-2. Log into account
-0. Exit
->1
+Enter action (add, remove, edit, count, info, exit): > info
+1. John Smith
+2. Pizza Shop
+Enter index to show info: > 2
+Organization name: Pizza shop
+Address: Wall St. 1
+Number: +0 (123) 456-789-9999
+Time created: 2018-01-01T00:00
+Time last edit: 2018-01-01T00:00
 
-Your card has been created
-Your card number:
-4000003305160034
-Your card PIN:
-5639
+Enter action (add, remove, edit, count, info, exit): > edit
+1. John Smith
+2. Pizza Shop
+Select a record: > 1
+Select a field (name, surname, birth, gender, number): > number
+Enter number: > (123) 234 345-456
+The record updated!
 
-1. Create an account
-2. Log into account
-0. Exit
->2
+Enter action (add, remove, edit, count, info, exit): > info
+1. John Smith
+2. Pizza Shop
+Select a record: > 1
+Name: John
+Surname: Smith
+Birth date: [no data]
+Gender: [no data]
+Number: (123) 234 345-456
+Time created: 2018-01-01T00:00
+Time last edit: 2018-01-01T00:01
 
-Enter your card number:
->4000009455296122
-Enter your PIN:
->1961
+Enter action (add, remove, edit, count, info, exit): > edit
+1. John Smith
+2. Pizza Shop
+Select a record: > 2
+Select a field (address, number): > address
+Enter address: > Wall St. 7
+The record updated!
 
-You have successfully logged in!
+Enter action (add, remove, edit, count, info, exit): > info
+1. John Smith
+2. Pizza Shop
+Enter index to show info: > 2
+Organization name: Pizza shop
+Address: Wall St. 7
+Number: +0 (123) 456-789-9999
+Time created: 2018-01-01T00:00
+Time last edit: 2018-01-01T00:02
 
-1. Balance
-2. Add income
-3. Do transfer
-4. Close account
-5. Log out
-0. Exit
->2
-
-Enter income:
->10000
-Income was added!
-
-1. Balance
-2. Add income
-3. Do transfer
-4. Close account
-5. Log out
-0. Exit
->1
-
-Balance: 10000
-
-1. Balance
-2. Add income
-3. Do transfer
-4. Close account
-5. Log out
-0. Exit
->3
-
-Transfer
-Enter card number:
->4000003305160035
-Probably you made a mistake in the card number. Please try again!
-
-1. Balance
-2. Add income
-3. Do transfer
-4. Close account
-5. Log out
-0. Exit
->3
-
-Transfer
-Enter card number:
->4000003305061034
-Such a card does not exist.
-
-1. Balance
-2. Add income
-3. Do transfer
-4. Close account
-5. Log out
-0. Exit
->3
-
-Transfer
-Enter card number:
->4000003305160034
-Enter how much money you want to transfer:
->15000
-Not enough money!
-
-1. Balance
-2. Add income
-3. Do transfer
-4. Close account
-5. Log out
-0. Exit
->3
-
-Transfer
-Enter card number:
->4000003305160034
-Enter how much money you want to transfer:
->5000
-Success!
-
-1. Balance
-2. Add income
-3. Do transfer
-4. Close account
-5. Log out
-0. Exit
->1
-
-Balance: 5000
-
-1. Balance
-2. Add income
-3. Do transfer
-4. Close account
-5. Log out
-0. Exit
-
->0
-Bye!
+Enter action (add, remove, edit, count, info, exit): > exit
 ```  
-**Example 2**       
+**Example 2**  
+
+The symbol ```>``` represents the user input.
 ```
-1. Create an account
-2. Log into account
-0. Exit
->1
+open phonebook.db
 
-Your card has been created
-Your card number:
-4000007916053702
-Your card PIN:
-6263
+[menu] Enter action (add, list, search, count, exit): > count
+The Phone Book has 6 records.
 
-1. Create an account
-2. Log into account
-0. Exit
->2
+[menu] Enter action (add, list, search, count, exit): > search
+Enter search query: > cent
+Found 3 results:
+1. Central Bank
+2. Centurion Adams
+3. Decent Pizza Shop
 
-Enter your card number:
->4000007916053702
-Enter your PIN:
->6263
+[search] Enter action ([number], back, again): > again
+Enter search query: > shop
+Found 2 results:
+1. Decent Pizza Shop
+2. Car shop
 
-You have successfully logged in!
+[search] Enter action ([number], back, again): > 2
+Organization name: Car shop
+Address: Wall St. 3
+Number: +0 (123) 456-789-9999
+Time created: 2018-01-01T00:03
+Time last edit: 2018-04-29T11:34
 
-1. Balance
-2. Add income
-3. Do transfer
-4. Close account
-5. Log out
-0. Exit
->4
+[record] Enter action (edit, delete, menu): > edit
+Select a field (name, address, number): > name
+Enter name: > New Car Shop
+Saved
+Organization name: New Car Shop
+Address: Wall St. 3
+Number: +0 (123) 456-789-9999
+Time created: 2018-01-01T00:03
+Time last edit: 2018-11-20T11:04
 
-The account has been closed!
+[record] Enter action (edit, delete, menu): > menu
 
-1. Create an account
-2. Log into account
-0. Exit
->2
+[menu] Enter action (add, list, search, count, exit): > search
+Enter search query: > new
+Found 1 result:
+1. New Car Shop
 
-Enter your card number:
->4000007916053702
-Enter your PIN:
->6263
+[search] Enter action ([number], back, again): > back
 
-Wrong card number or PIN!
+[menu] Enter action (add, list, search, count, exit): > list
+1. New Car Shop
+2. Decent Pizza Shop
+3. Central Bank
+4. Centurion Adams
+5. John Smith
+6. Alice Wonderlanded
 
-1. Create an account
-2. Log into account
-0. Exit
->0
+[list] Enter action ([number], back): > 6
+Name: Alice
+Surname: Wonderlanded
+Birth date: [no data]
+Gender: F
+Number: +123123 (123) 12-23-34-45
+Time created: 2018-03-12T11:21
+Time last edit: 2018-03-12T11:21
 
-Bye!
+[record] Enter action (edit, delete, menu): > edit
+Select a field (name, surname, birth, gender, number): > number
+Enter number: > +23 (321) 12-12 12 12
+Saved
+Name: Alice
+Surname: Wonderlanded
+Birth date: [no data]
+Gender: F
+Number: +23 (321) 12-12 12 12
+Time created: 2018-03-12T11:21
+Time last edit: 2018-11-20T11:07
+
+[record] Enter action (edit, delete, menu): > menu
+
+[menu] Enter action (add, list, search, count, exit): > exit
 ```
 ## Additional info
-To find more about this project, please visit https://hyperskill.org/projects/93.
+To find more about this project, please visit https://hyperskill.org/projects/43.
 
 
