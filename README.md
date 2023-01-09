@@ -7,8 +7,15 @@ A program to create contacts (like on the mobile phone) and search for people or
 - Java Reflection
 - Java I/O Streams  
 ## Running the project
-The Source files for this project can be found by navigating to:  
-Contacts/task/src/contacts/Main.java
+To run the program you will need The Java Development Kit (JDK) installed.
+
+To run the program from CMD:
+
+  1. Open CMD and go to ./Contacts/task/src/contacts/
+  2. Compile the Java code: ./Contacts/task/src/contacts javac *.java
+  3. Change directory to ./Contacts: cd ../../..
+  4. Run the program: ./Contacts java -cp task\src contacts.Main
+
 ## Usage
 **Example 1**   
 
