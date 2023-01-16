@@ -4,7 +4,7 @@ A program to create contacts (like on the mobile phone) and search for people or
 ## Features
 - Command pattern
 - Regexps
-- Java Reflection
+- Java Reflection API
 - Java I/O Streams  
 ## Running the project
 To run the program you will need The Java Development Kit (JDK) installed.
